@@ -37,10 +37,7 @@ class Deck {
         return this.deck;
     }
 
-    emitCard(num) {
-        //console.log('remove cards from the deck and return them from this function');
-        //return this.deck.pop();
-
+    emitCard(num = 1) {
         return this.deck.length >= num ? this.deck.splice(0, num) : null;
     }
 }
