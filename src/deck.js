@@ -40,12 +40,12 @@ class Deck {
 
     emitCard(num) {
         //console.log('remove cards from the deck and return them from this function');
-        return this.deck.pop();
+        //return this.deck.pop();
+        return this.deck.splice(0, num);
     }
 
 
 }
 
-//export default Deck;
 module.exports = Deck;
 

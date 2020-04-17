@@ -1,5 +1,5 @@
 
-// TODO - generaize definition of deck to accommodate standard playing cards and tarot cards
+// TODO - generaize definition of deck to accommodate standard playing cards AND tarot cards
 //  fire, water, air, earth, 
 const pips = [
   "ace",

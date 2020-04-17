@@ -24,13 +24,9 @@ describe('standard deck', () => {
     })
 
     test('cards are emitted', () => {
+        let numcards = 5;
         let initLength = standardDeck.emitDeck().length;
-        let card = standardDeck.emitCard(1);
-        expect(card).toMatchObject({
-            value: expect.anything(),
-            suit: expect.anything(),
-            name: expect.anything()
-        });
         expect(initLength).toBeGreaterThan(standardDeck.deck.length);
+        expect(initLength-standardDeck.deck.length).toBe(numcards);
     })
 })
