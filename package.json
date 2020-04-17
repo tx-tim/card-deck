@@ -1,5 +1,5 @@
 {
-    "name": "card-deck",
+    "name": "@coolazelle/card-deck",
     "version": "1.0.0",
     "description": "Vanilla javascript class that models the behavior of a card deck",
     "repository": "tx-tim /card-deck",
