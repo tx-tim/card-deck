@@ -34,6 +34,37 @@ describe('standard deck', () => {
         let numcards = 53;
         let initLength = standardDeck.emitDeck().length;
         let cards = standardDeck.emitCard(numcards);
-        expect(cards.length).toBeGreaterThan(0);
+        expect(cards).toBe(null);
+    });
+
+    test('dealing with 1 player', () => {
+        let hand = [];
+        let numcards = 4;
+        let tempcards = [];
+        while (tempcards) {
+            tempcards = standardDeck.emitCard(numcards);
+            if (tempcards) {
+                hand = [...hand, ...tempcards];
+            }
+        }
+        expect(hand.length).toBe(52);
+    });
+    test('dealing with two players', () => {
+        let hand1 = [];
+        let hand2 = [];
+        let numcards = 1;
+        let tempcards = standardDeck.emitCard(numcards);
+        let counter = 1;
+        while (tempcards) {
+            if (counter % 2 === 0) {
+                hand2 = [...hand2, ...tempcards];
+            } else {
+                hand1 = [...hand1, ...tempcards];
+            }
+            tempcards = standardDeck.emitCard(numcards);
+            counter += 1;
+        }
+        expect(hand1.length).toBe(26);
+        expect(hand2.length).toBe(26);
     });
 });
