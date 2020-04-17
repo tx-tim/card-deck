@@ -1,8 +1,7 @@
-
-const deckConfigs =  require('./config');
+const deckConfigs = require('./config');
 
 class Deck {
-    constructor(type='standard') {
+    constructor(type = 'standard') {
         this.deckType = deckConfigs[type];
         this.deck = this.initializeDeck();
     }
@@ -14,18 +13,18 @@ class Deck {
     createSuit(name) {
         return this.deckType.suitNums.map((c, i) => {
             return {
-            value: i + 1,
-            suit: name,
-            name: c + " Of " + name
+                value: i + 1,
+                suit: name,
+                name: c + ' Of ' + name,
             };
         });
-    };
+    }
 
     initializeDeck() {
-        return this.deckType.suitNames.reduce( (acc, item, i) => {
+        return this.deckType.suitNames.reduce((acc, item, i) => {
             return acc.concat(this.createSuit(item));
-        }, [])
-    };
+        }, []);
+    }
 
     shuffle() {
         var j, placeholder, i;
@@ -43,9 +42,6 @@ class Deck {
         //return this.deck.pop();
         return this.deck.splice(0, num);
     }
-
-
 }
 
 module.exports = Deck;
-

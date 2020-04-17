@@ -1,3 +1,3 @@
-let standard_deck = require('./standard');
+const standard_deck = require('./standard');
 
-exports.standard  = standard_deck;
+exports.standard = standard_deck;
