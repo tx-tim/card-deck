@@ -1,12 +1,9 @@
 
-const StandardDeck = require('./config').standard;
 const deckConfigs =  require('./config');
 
 class Deck {
     constructor(type='standard') {
-        console.log('constructor ', type);
         this.deckType = deckConfigs[type];
-        console.log('decktype ', this.deckType);
         this.deck = this.initializeDeck();
     }
 
@@ -25,10 +22,9 @@ class Deck {
     };
 
     initializeDeck() {
-        return this.createSuit("Hearts")
-            .concat(this.createSuit("Spades"))
-            .concat(this.createSuit("Clubs"))
-            .concat(this.createSuit("Diamonds"));
+        return this.deckType.suitNames.reduce( (acc, item, i) => {
+            return acc.concat(this.createSuit(item));
+        }, [])
     };
 
     shuffle() {
@@ -43,7 +39,7 @@ class Deck {
     }
 
     emitCard(num) {
-        console.log('remove cards from the deck and return them from this function');
+        //console.log('remove cards from the deck and return them from this function');
         return this.deck.pop();
     }
 

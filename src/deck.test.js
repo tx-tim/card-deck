@@ -1,23 +1,36 @@
-let Deck = require('./deck.js');
+const Deck = require('./deck.js');
 
-let standardDeck = new Deck();
-//let deck2 = new Deck('tarot');
+describe('standard deck', () => {
+    let standardDeck;
+    beforeEach( () => {
+        standardDeck = new Deck();
+    })
 
-// test error scenario
+    test('deck with no init params returns standard deck configuration', () => {
+        expect(standardDeck.deck.length).toBe(52);
+    });
 
-// test that deck with no params returns default deck configuration
-// test that deck with params reflects requested configuration
-// return n cards according to deck type (params above)
-let x = standardDeck.emitDeck();
-console.log(x)
+    test('decktype', () => {
+        
+        expect(standardDeck.deckType.suitNames).toBeTruthy();
+    });
 
-// test that shuffled deck values are not in order
-let shuffled = standardDeck.shuffle();
-console.log(shuffled);
+    test('shuffled deck is not in order', () => {
+        let shuffled = standardDeck.shuffle();
+        let consecTest1 = shuffled[0].value +1 === shuffled[1].value;
+        let consecTest2 = shuffled[1].value +1 === shuffled[2].value;
+        let consecTest3 = shuffled[2].value +1 === shuffled[3].value;
+        expect(consecTest1 && consecTest2 && consecTest3).toBeFalsy();
+    })
 
-// test that the appropriate number of cards are emitted
-// test that deck length has decremented by the number of cards emitted
-console.log(standardDeck.emitDeck().length);
-let card = standardDeck.emitCard(1);
-console.log(card);
-console.log(standardDeck.emitDeck().length);
+    test('cards are emitted', () => {
+        let initLength = standardDeck.emitDeck().length;
+        let card = standardDeck.emitCard(1);
+        expect(card).toMatchObject({
+            value: expect.anything(),
+            suit: expect.anything(),
+            name: expect.anything()
+        });
+        expect(initLength).toBeGreaterThan(standardDeck.deck.length);
+    })
+})

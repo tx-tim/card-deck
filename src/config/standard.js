@@ -16,7 +16,7 @@ const StandardSuit = [
 ];
 
 const StandardSuitNames = [
-    "Hearts", "Spades", "Clubs", "Diamonds"
+   "Clubs", "Hearts", "Spades", "Diamonds"
 ]
 
 module.exports = {

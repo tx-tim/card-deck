@@ -1,6 +1,6 @@
 
 // TODO - generaize definition of deck to accommodate standard playing cards and tarot cards
-
+//  fire, water, air, earth, 
 const pips = [
   "ace",
   "two",
@@ -19,7 +19,7 @@ const pips = [
 ];
 
 const suits = [
-    "Cups", "Swords", "Wands", "Pentacles"
+    "Wands", "Cups", "Swords", "Pentacles"
 ]
 
 // what to do with major arcana?
