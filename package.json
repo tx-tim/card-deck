@@ -1,14 +1,18 @@
 {
     "name": "card-deck",
     "version": "1.0.0",
-    "description": "",
+    "description": "Vanilla javascript class that models the behavior of a card deck",
+    "repository": "tx-tim /card-deck",
     "main": "index.js",
+    "engines": {
+        "node": ">=0.10.0"
+    },
     "scripts": {
         "test": "jest",
         "pretest": "eslint --ignore-path .gitignore .",
         "lint:fix": "eslint --fix"
     },
-    "author": "",
+    "author": "Timothy Proffitt",
     "license": "ISC",
     "dependencies": {},
     "devDependencies": {
@@ -24,5 +28,10 @@
         "hooks": {
             "pre-commit": "npm test"
         }
-    }
+    },
+    "keywords": [
+        "shuffle",
+        "card-deck",
+        "javascript"
+    ]
 }

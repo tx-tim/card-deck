@@ -40,7 +40,8 @@ class Deck {
     emitCard(num) {
         //console.log('remove cards from the deck and return them from this function');
         //return this.deck.pop();
-        return this.deck.splice(0, num);
+
+        return this.deck.length >= num ? this.deck.splice(0, num) : null;
     }
 }
 
