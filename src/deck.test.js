@@ -37,7 +37,7 @@ describe('standard deck', () => {
         expect(cards).toBe(null);
     });
 
-    test('dealing with 1 player', () => {
+    test('deal hand with 1 player', () => {
         let hand = [];
         let numcards = 4;
         let tempcards = [];
@@ -49,7 +49,7 @@ describe('standard deck', () => {
         }
         expect(hand.length).toBe(52);
     });
-    test('dealing with two players', () => {
+    test('deal hand with two players', () => {
         let hand1 = [];
         let hand2 = [];
         let numcards = 1;
