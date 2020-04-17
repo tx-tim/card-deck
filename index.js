@@ -1,3 +1,3 @@
-const Deck = require('./deck.js');
+const Deck = require('./src/deck.js');
 
 module.exports = Deck;
