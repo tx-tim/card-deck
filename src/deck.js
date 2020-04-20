@@ -4,6 +4,7 @@ class Deck {
     constructor(type = 'standard') {
         this.deckType = deckConfigs[type];
         this.deck = this.initializeDeck();
+        return this;
     }
 
     emitDeck() {
@@ -34,7 +35,7 @@ class Deck {
             this.deck[i] = this.deck[j];
             this.deck[j] = placeholder;
         }
-        return this.deck;
+        return this;
     }
 
     emitCard(num = 1) {
